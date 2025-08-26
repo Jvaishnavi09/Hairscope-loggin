@@ -1,0 +1,73 @@
+@import "tailwindcss";
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Custom animations */
+@keyframes door-left-slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
+}
+
+@keyframes door-right-slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes center-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-doorLeft {
+  animation: door-left-slide 1.1s ease-out forwards;
+}
+
+.animate-doorRight {
+  animation: door-right-slide 1.1s ease-out forwards;
+}
+
+.animate-centerPulse {
+  animation: center-pulse 750ms ease-in-out infinite;
+}
