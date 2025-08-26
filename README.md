@@ -2,6 +2,9 @@
 
 A secure React-based login system with a lab dashboard, animated sliding doors UI, and a countdown timer that automatically logs out and blocks users after session expiry.
 
+Name : jayavaishnavi
+email : jayavaishnavi092000@gmail.com
+
 ✨ Features
 
 ✅ Animated Login Screen – Sliding doors + fingerprint animation using Framer Motion
