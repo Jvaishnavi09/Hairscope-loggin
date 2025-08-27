@@ -79,3 +79,6 @@ hairscope-login/
 🌐 Backend integration for secure session tracking
 
 📊 Add lab-specific data and analytics inside dashboard
+
+
+Deployement Link : https://logginpagehairscope.netlify.app/
