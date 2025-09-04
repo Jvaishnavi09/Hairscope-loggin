@@ -63,7 +63,7 @@ const LoginScreen = ({ onLogin, timeLeft, isLocked }) => {
                 <div
                   key={i}
                   style={{ height: `${100 / segments}%` }}
-                  className={`w-full mb-1 last:mb-0 rounded-sm border ${
+                  className={`w-full mb-1 last:mb-0  border ${
                     isFilled
                       ? "bg-[#00ccb3] border-cyan-400"
                       : "bg-transparent border-gray-500"
