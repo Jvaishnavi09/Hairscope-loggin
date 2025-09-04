@@ -7,6 +7,13 @@ const LoginScreen = ({ onLogin, timeLeft, isLocked }) => {
   const [error, setError] = useState("");
   const [animate, setAnimate] = useState(false);
   const [open, setOpen] = useState(false);
+  const segments = 8;
+
+  const totalTime = 600; // 10 min
+  const timePerSegment = totalTime / segments;
+  // Calculate how many segments are "filled"
+  const elapsed = totalTime - timeLeft;
+  const filledBlocks = Math.ceil(timeLeft / timePerSegment);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,6 +52,28 @@ const LoginScreen = ({ onLogin, timeLeft, isLocked }) => {
         animate={open ? { x: "100%" } : { x: 0 }}
         transition={{ duration: 1.2, ease: "easeInOut" }}
       >
+        <div className="flex flex-col items-center">
+          {/* Battery Body */}
+          <div className="w-24 h-48  rounded-lg flex flex-col justify-end p-2">
+            {[...Array(segments)].map((_, i) => {
+              // ✅ Fill from bottom
+              const isFilled = i >= segments - filledBlocks;
+
+              return (
+                <div
+                  key={i}
+                  style={{ height: `${100 / segments}%` }}
+                  className={`w-full mb-1 last:mb-0 rounded-sm border ${
+                    isFilled
+                      ? "bg-[#00ccb3] border-cyan-400"
+                      : "bg-transparent border-gray-500"
+                  }`}
+                />
+              );
+            })}
+          </div>
+        </div>
+
         <div className="flex flex-col items-center space-y-6 text-center">
           <p className="px-4 text-4xl font-bold text-brandCyan drop-shadow-lg">
             ⏱ Time : 10 Minutes
